@@ -1,0 +1,19 @@
+branch-defaults:
+  master:
+    environment: Systemunet-env
+environment-defaults:
+  Systemunet-env:
+    branch: null
+    repository: null
+global:
+  application_name: systemu.net
+  default_ec2_keyname: null
+  default_platform: Ruby 2.6 running on 64bit Amazon Linux 2
+  default_region: eu-central-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: systemu-net-eb-deploy
+  sc: git
+  workspace_type: Application

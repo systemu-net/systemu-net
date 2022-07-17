@@ -1,0 +1,28 @@
+<% conversation.personal_messages.each do |message| %>
+  <% if message.user.name == current_user.name %>
+    <div class="outgoing_msg">
+      <div class="outgoing_msg_img">
+        <%= image_tag avatar_url(message.user), width: '21', height: '21', class: "round-img" %>
+      </div>
+      <div class="sent_msg">
+        <p><%= message.body %></p>
+        <span class="time_date">
+          <%= format_time message.created_at %></span>
+      </div>
+    </div>
+  <% else %>
+    <div class="incoming_msg">
+      <div class="incoming_msg_img">
+        <%= image_tag avatar_url(message.user), width: '21', height: '21', class: "round-img" %>
+      </div>
+      <div class="received_msg">
+        <div class="received_withd_msg">
+          <p><%= message.body %></p>
+          <span class="time_date">
+            <%= format_time message.created_at %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="posts">
+  <span class="posts-count">
+    <%= posts.count %>
+  </span>
+  <%= 'post'.pluralize posts.count %>
+</div>
+<div class="followers">
+  <span class="posts-count">
+    <%= user.followers.count %>
+  </span>
+  <%= 'follower'.pluralize user.followers.count %>
+</div>
+<div class="following">
+  <span class="posts-count">
+    <%= user.following.count %>
+  </span>
+  <%= 'following' %>
+</div>

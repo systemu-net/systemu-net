@@ -1,0 +1,9 @@
+$(".mesgs .msg_history").html("<%= j render 'personal_messages', {
+  conversation: @conversation,
+  personal_message: @personal_message
+} %>");
+
+$(".mesgs .type_msg").html("<%= j render 'type_message', {
+  conversation: @conversation,
+  personal_message: @personal_message 
+} %>");

@@ -1,0 +1,8 @@
+$("#direct .modal-content").html("<%= j render 'index', {
+  conversations: @conversations,
+  personal_message: @personal_message,
+  conversation: @conversation
+} %>");
+$("#direct").modal();
+
+$('.msg_history').scrollTop($('.msg_history').prop("scrollHeight"))

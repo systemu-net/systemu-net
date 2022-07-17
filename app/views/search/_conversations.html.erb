@@ -1,0 +1,17 @@
+<%# <% conversations.each_with_index do |conversation, index| %>
+  <%= link_to search_path(conversation), { remote: true } do %>
+    <div class="conversation-<%= conversation.id %> chat_list <%= 'active_chat' if index.zero? %>">
+      <div class="chat_people">
+        <div class="chat_img">
+          <%= image_tag avatar_url(conversation.with(current_user)), width: '27', height: '27', class: "round-img" %>
+        </div>
+        <div class="chat_ib">
+          <h5><%= conversation.with(current_user).name %>
+            <span class="chat_date"><%= chatted_time conversation.updated_at %></span>
+          </h5>
+          <p><%= conversation.personal_messages.last.body.truncate(50) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

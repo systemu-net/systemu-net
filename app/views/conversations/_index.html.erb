@@ -1,0 +1,42 @@
+<div class="modal-header">
+  <h5 class="modal-title">Direct</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4>Recent</h4>
+            </div>
+            <div class="srch_bar">
+              <div class="stylish-input-group">
+                <input type="text" class="search-bar" placeholder="Search">
+                <span class="input-group-addon">
+                  <button type="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="inbox_chat">
+            <%= render 'conversations', { conversations: conversations } %>
+          </div>
+        </div>
+        <div class="mesgs">
+          <div class="msg_history">
+            <%= render 'personal_messages', { conversation: conversations.first } %>
+          </div>
+          <div class="type_msg">
+            <%= render 'type_message', { conversation: conversations.first, personal_message: personal_message } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

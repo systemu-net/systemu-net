@@ -1,0 +1,5 @@
+$(".modal .modal-content").html("<%= j render 'new', {
+  conversations: @conversations,
+  personal_message: @personal_message
+} %>");
+$(".modal").modal();

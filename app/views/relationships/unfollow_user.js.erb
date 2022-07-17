@@ -1,0 +1,8 @@
+$('#unfollow-user-btn').text('Follow')
+  .attr('class', 'btn common-btn follow-user-btn')
+  .attr('href', "/<%= @user.id %>/follow_user")
+  .attr('id', 'follow-user-btn')
+
+  $('#social-info').html('<%= j render "users/social_info", {
+    user: @user, posts: @posts
+  } %>');
