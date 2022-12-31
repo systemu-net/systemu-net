@@ -34,3 +34,5 @@
 
 .python-version
 dump.rdb
+
+*.pem
