@@ -3,7 +3,6 @@ class SearchController < ApplicationController
   before_action :check_participating!, except: [:index, :new]
 
   def index
-
   end
 
   def new

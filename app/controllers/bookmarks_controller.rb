@@ -23,6 +23,7 @@ class BookmarksController < ApplicationController
   end
 
   private
+
   def bookmark_params
     params.permit :user_id, :post_id
   end
