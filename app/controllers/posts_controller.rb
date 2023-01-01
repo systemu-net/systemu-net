@@ -3,8 +3,10 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :destroy]
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 5).includes(:photos, :user, :likes).
-      order("created_at desc")
+    @posts = Post
+      .paginate(:page => params[:page], :per_page => 7)
+      .includes(:photos, :user, :likes)
+      .order("created_at desc")
     # @posts = Post.of_followed_users(current_user.following)
     #              .paginate(:page => params[:page], :per_page => 5)
     #              .includes(:photos, :user, :likes)
