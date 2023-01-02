@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  let debounced = _.debounce(function(){
+  var debounced = _.debounce(function(){
     var jqxhr = $.get(
       $("#users-search").attr("action"),
       {term: $("#users-search #term").val()},
