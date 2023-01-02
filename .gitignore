@@ -36,3 +36,6 @@
 dump.rdb
 
 *.pem
+
+# Ignore precompiled javascript packs
+/public/assets
