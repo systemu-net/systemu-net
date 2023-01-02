@@ -29,7 +29,11 @@ class Post < ApplicationRecord
 
   def create_hash_tags
     extract_name_hash_tags.each do |name|
-      hash_tags.create(name: name)
+      if existing_hash_tag = HashTag.find_by_name(name)
+        post_hash_tags.create(hash_tag_id: existing_hash_tag.id)
+      else
+        hash_tags.create(name: name)
+      end
     end
   end
 end

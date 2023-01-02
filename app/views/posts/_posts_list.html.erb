@@ -15,27 +15,27 @@
       <% end %>
     </div>
 
-    <%= render "photos", {post: post} %>
+    <%= render "posts/photos", {post: post} %>
 
     <div class="card-body">
       <div class="row actions">
         <div id="like-icon-post-<%= post.id.to_s %>">
-          <%= render "like_icon", {is_liked: post.is_liked(current_user), post: post} %>
+          <%= render "posts/like_icon", {is_liked: post.is_liked(current_user), post: post} %>
         </div>
         <%= link_to "Comment", post_path(post), class: "core-sprite comment hide-text" %>
         <div id="bookmark-icon-post-<%= post.id.to_s %>" class="ml-auto">
-          <%= render "bookmark_icon", {is_bookmarked: post.is_bookmarked(current_user), post: post} %>
+          <%= render "posts/bookmark_icon", {is_bookmarked: post.is_bookmarked(current_user), post: post} %>
         </div>
       </div>
       <div id="like-text-post-<%= post.id.to_s %>">
-        <%= render "like_text", {likes: post.likes} %>
+        <%= render "posts/like_text", {likes: post.likes} %>
       </div>
       <div>
         <span><strong><%= post.user.name %></strong></span>
         <span>
           <% post.content.to_s.split(' ').each do |word| %>
             <% if word.start_with?('#') %>
-              <%= link_to word, search_index_path(term: word) %>
+              <%= link_to word, hash_tag_url(id: word.gsub('#', '')) %>
             <% else %>
               <%= word %>
             <% end %>
@@ -44,14 +44,14 @@
       </div>
       <!-- load comments -->
       <div id="comment-post-<%= post.id.to_s %>">
-        <%= render 'comment_list', {post: post} %>
+        <%= render 'posts/comment_list', {post: post} %>
       </div>
       <%= link_to time_ago_in_words(post.created_at).upcase + " AGO", post_path(post),
         class: "light-color post-time no-text-decoration" %>
       <hr>
       <% if current_user %>
         <div class="row actions" id="comment-form-post-<%= post.id.to_s %>">
-          <%= render 'comment_form', {post: post} %>
+          <%= render 'posts/comment_form', {post: post} %>
         </div>
       <% end %>
     </div>

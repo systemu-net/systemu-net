@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy], shallow: true
   end
 
+  resources :hash_tags, only: [:index, :show]
+
   post ':id/follow_user', to: 'relationships#follow_user', as: :follow_user
   post ':id/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
 end
