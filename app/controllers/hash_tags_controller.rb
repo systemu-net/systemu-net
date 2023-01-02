@@ -8,7 +8,7 @@ class HashTagsController < ApplicationController
 
   def show
     @posts = @hash_tag.posts
-      .paginate(:page => params[:page], :per_page => 7)
+      .paginate(page: params[:page], per_page: 7)
       .includes(:photos, :user, :likes, :bookmarks, :comments)
       .order("created_at desc")
     @post = Post.new
