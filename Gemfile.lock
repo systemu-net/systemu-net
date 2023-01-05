@@ -119,6 +119,9 @@ GEM
     hashie (3.5.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.20.0)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
@@ -152,6 +155,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -214,6 +218,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    ruby-openai (3.0.2)
+      httparty (>= 0.18.1, < 0.21.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.7)
@@ -303,6 +309,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   redis
+  ruby-openai
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
