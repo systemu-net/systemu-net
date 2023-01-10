@@ -24,20 +24,7 @@
       </div>
       <hr class="mb-0">
       <div class="comment-list py-2">
-      <% if @post.content.present? %>
-        <div>
-          <span><strong><%= @post.user.name %></strong></span>
-          <span>
-            <% @post.content.to_s.split(' ').each do |word| %>
-              <% if word.start_with?('#') %>
-                <%= link_to word, search_index_path(term: word) %>
-              <% else %>
-                <%= word %>
-              <% end %>
-            <% end %>
-          </span>
-        </div>
-      <% end %>
+        <%= render 'posts/post_content', { post: @post } %>
         <!-- load comment -->
         <div id="comment-post-<%= @post.id.to_s %>">
           <%= render 'comment_list', post: @post %>

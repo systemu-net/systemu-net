@@ -31,16 +31,7 @@
         <%= render "posts/like_text", {likes: post.likes} %>
       </div>
       <div>
-        <span><strong><%= post.user.name %></strong></span>
-        <span>
-          <% post.content.to_s.split(' ').each do |word| %>
-            <% if word.start_with?('#') %>
-              <%= link_to word, hash_tag_url(id: word.gsub('#', '')) %>
-            <% else %>
-              <%= word %>
-            <% end %>
-          <% end %>
-        </span>
+        <%= render 'posts/post_content', { post: post } %>
       </div>
       <!-- load comments -->
       <div id="comment-post-<%= post.id.to_s %>">

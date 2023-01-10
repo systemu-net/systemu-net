@@ -1,0 +1,14 @@
+<% if post.content.present? %>
+  <div>
+    <span><strong><%= post.user.name %></strong></span>
+    <span>
+      <% post.content.to_s.split(' ').each do |word| %>
+        <% if word.start_with?('#') %>
+          <%= link_to word, hash_tag_url(id: word.gsub('#', '')) %>
+        <% else %>
+          <%= simple_format(word, {}, wrapper_tag: "span").gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
+<% end %>
