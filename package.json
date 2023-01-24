@@ -1,5 +1,7 @@
 {
   "name": "systemu.net",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "vscode-uri": "^3.0.7"
+  }
 }

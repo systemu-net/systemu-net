@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+"vscode-uri@^3.0.7":
+  "integrity" "sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA=="
+  "resolved" "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.0.7.tgz"
+  "version" "3.0.7"
