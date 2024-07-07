@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes
@@ -25,9 +27,9 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image.gsub!("_normal", "") # assuming the user model has an image
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name # assuming the user model has a name
+      user.image = auth.info.image.gsub!('_normal', '') # assuming the user model has an image
       user.uid = auth.uid
       user.provider = auth.provider
       # If you are using confirmable and the provider(s) you use validate emails,
@@ -37,11 +39,9 @@ class User < ApplicationRecord
   end
 
   def self.search(term)
-    if term
-      where('name LIKE ?', "%#{term}%")
-    else
-      nil
-    end
+    return unless term
+
+    where('name LIKE ?', "%#{term}%")
   end
 
   def follow(user_id)
@@ -53,6 +53,6 @@ class User < ApplicationRecord
   end
 
   def online?
-    !Redis.new.get("user_#{self.id}_online").nil?
+    !Redis.new.get("user_#{id}_online").nil?
   end
 end

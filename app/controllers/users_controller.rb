@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
@@ -14,9 +16,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     set_meta_tags title: @user.name
-    @posts = @user.posts.includes(:photos, :likes, :comments).order("created_at desc")
-    @saved = Post.joins(:bookmarks).where("bookmarks.user_id=?", current_user.id).
-      includes(:photos, :likes, :comments).order("created_at desc") if @user == current_user
+    @posts = @user.posts.includes(:photos, :likes, :comments).order('created_at desc')
+    return unless @user == current_user
+
+    @saved = Post.joins(:bookmarks).where('bookmarks.user_id=?', current_user.id)
+                 .includes(:photos, :likes, :comments).order('created_at desc')
   end
 
   private
