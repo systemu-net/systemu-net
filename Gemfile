@@ -21,7 +21,7 @@ gem 'meta-tags'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-twitter'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 6.1.7.8'
+gem 'rails', '~> 7.1.3.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'toastr-rails'
@@ -49,9 +49,6 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '3.9.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  # gem 'spring'
-  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
