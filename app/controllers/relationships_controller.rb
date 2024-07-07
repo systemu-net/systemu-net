@@ -1,21 +1,23 @@
+# frozen_string_literal: true
+
 class RelationshipsController < ApplicationController
-  before_action :find_user_and_posts, only: [:follow_user, :unfollow_user]
+  before_action :find_user_and_posts, only: %i[follow_user unfollow_user]
 
   def follow_user
-    if current_user.follow @user.id
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js
-      end
+    return unless current_user.follow @user.id
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
   end
 
   def unfollow_user
-    if current_user.unfollow @user.id
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js
-      end
+    return unless current_user.unfollow @user.id
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
   end
 

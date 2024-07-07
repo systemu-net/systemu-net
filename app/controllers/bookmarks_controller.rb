@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
@@ -8,7 +10,7 @@ class BookmarksController < ApplicationController
       @is_bookmarked = @bookmark
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = 'Something went wrong ...'
     end
   end
 
@@ -18,7 +20,7 @@ class BookmarksController < ApplicationController
     if @bookmark.destroy
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = 'Something went wrong ...'
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HashTagsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_hash_tag, only: [:show]
@@ -8,9 +10,9 @@ class HashTagsController < ApplicationController
 
   def show
     @posts = @hash_tag.posts
-      .paginate(page: params[:page], per_page: 7)
-      .includes(:photos, :user, :likes, :bookmarks, :comments)
-      .order("created_at desc")
+                      .paginate(page: params[:page], per_page: 7)
+                      .includes(:photos, :user, :likes, :bookmarks, :comments)
+                      .order('created_at desc')
     @post = Post.new
 
     render 'posts/index'
@@ -22,7 +24,8 @@ class HashTagsController < ApplicationController
     @hash_tag = HashTag.find_by name: params[:id]
 
     return if @hash_tag
-    flash[:danger] = "Hashtag does not exist!"
+
+    flash[:danger] = 'Hashtag does not exist!'
     redirect_to root_path
   end
 end

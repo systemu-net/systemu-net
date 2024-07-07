@@ -1,5 +1,6 @@
-class PhotoUploader < CarrierWave::Uploader::Base
+# frozen_string_literal: true
 
+class PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -25,7 +26,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # process :tags => ['post_picture']
 
   version :standard do
-    process :resize_to_fill => [1080, 1080, :center]
+    process resize_to_fill: [1080, 1080, :center]
     # process :resize_to_fill => [1080, 1080], if: :portrait?
     # process :resize_to_fit => [1080, 810], if: :landscape?
   end
@@ -79,5 +80,4 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
