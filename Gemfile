@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '~> 4.6.2'
-gem 'carrierwave', '~> 2.2.6'
+gem 'carrierwave', '~> 3.0.7'
 # gem 'cloudinary'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
@@ -28,9 +28,11 @@ gem 'omniauth', '~> 1.6'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 7.1.3.4'
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+gem 'rails', '~> 7.2.1'
 gem 'redis'
-gem 'sass-rails', '~> 5.0'
+gem 'sprockets-rails'
 gem 'squasher'
 gem 'toastr-rails'
 gem 'turbolinks', '~> 5'
@@ -57,3 +59,5 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rubocop', '~> 1.64'
+
+gem 'dartsass-rails', '~> 0.5.1'

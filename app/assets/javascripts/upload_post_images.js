@@ -28,6 +28,11 @@ $(document).ready(function(){
       });
 
       this.on("errormultiple", function(files, response){
+        toastr.options = {
+          "closeButton": true,
+          "timeOut": "5000",
+          "positionClass": "toast-top-center"
+        };
         toastr.error(response);
       });
     }

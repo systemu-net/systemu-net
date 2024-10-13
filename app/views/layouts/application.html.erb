@@ -6,7 +6,7 @@
     <%= display_meta_tags site: 'Share messages with family and friends',
                           keywords: %w[systemu.net photos videos share messages friends family],
                           description: "Create an account or log in to Systemu - A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family."%>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/251a4e45b7.js" crossorigin="anonymous"></script>
     <%= favicon_link_tag 'icon.png' %>
@@ -32,6 +32,9 @@
       <script type="text/javascript">
         <% flash.each do |key, value| %>
           <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+          toastr.options = {
+            "closeButton": true
+          }
           toastr.<%= type %>('<%= value %>')
         <% end %>
       </script>
