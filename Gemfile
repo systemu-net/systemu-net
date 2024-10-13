@@ -28,6 +28,8 @@ gem 'omniauth', '~> 1.6'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'puma', '~> 3.7'
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 gem 'rails', '~> 7.2.1'
 gem 'redis'
 gem 'sprockets-rails'

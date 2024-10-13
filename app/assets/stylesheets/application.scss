@@ -15,13 +15,13 @@ body {
 }
 
 .core-sprite {
-  background-image: image-url("core-sprite-2x.png");
+  background-image: url("core-sprite-2x.png");
   background-size: 405px 379px;
   background-repeat: no-repeat;
 }
 
 // .core-sprite-sdemian {
-//   background-image: image-url("core-sprite-sdemian.png");
+//   background-image: url("core-sprite-sdemian.png");
 //   background-size: 405px 379px;
 //   background-repeat: no-repeat;
 // }
@@ -82,7 +82,7 @@ body {
 // Landing
 .landing-left {
   .dummy-phone {
-    background-image: image-url("dummy-phone-2x.png");
+    background-image: url("dummy-phone-2x.png");
     background-repeat: no-repeat;
     background-position: right 0;
     background-size: 454px 618px;

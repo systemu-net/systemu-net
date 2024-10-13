@@ -19,8 +19,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      params[:images]&.each do |img|
-        @post.photos.create(image: params[:images][img])
+      # byebug
+      params[:images]&.each do |index, image|
+        @post.photos.create(image: image) if image.is_a?(ActionDispatch::Http::UploadedFile)
       end
 
       redirect_to posts_path
@@ -65,6 +66,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit :content
+    params.require(:post).permit(:content)
   end
 end
