@@ -42,10 +42,10 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 
 ## Built with
-- Ruby 2.5
-- Rails 5.1.6+
+- Ruby 3.3.3
+- Rails 7.2.1
 - jQuery - Ajax - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Bootstrap 4](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
+- [Bootstrap 4.6.2](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
 - Awesome [Gems](Gemfile)
 
 ## [License](LICENSE.md)
