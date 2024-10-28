@@ -29,7 +29,7 @@ gem 'omniauth-twitter'
 gem 'pg'
 gem 'puma', '~> 3.7'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem 'importmap-rails'
 gem 'rails', '~> 7.2.1'
 gem 'redis'
 gem 'sprockets-rails'
@@ -47,7 +47,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # gem 'sqlite3'
   gem 'pry-rails'
-  gem "rubocop-rails-omakase"
+  gem 'rubocop-rails-omakase'
 end
 
 group :development do

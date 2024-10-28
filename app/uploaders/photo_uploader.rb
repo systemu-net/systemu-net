@@ -44,9 +44,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Method to resize the image and add padding (fill) to make it 1080x1080
   def resize_and_pad_to_1080x1080
     manipulate! do |img|
-      img.resize "1080x1080^"           # Resize to fit within 1080x1080, maintaining aspect ratio
-      img.gravity "center"              # Center the image within the canvas
-      img.background "white"            # Set the background color for padding (change if needed)
+      img.resize '1080x1080^'           # Resize to fit within 1080x1080, maintaining aspect ratio
+      img.gravity 'center'              # Center the image within the canvas
+      img.background 'white'            # Set the background color for padding (change if needed)
       # img.extent "1080x1080"            # Extend the canvas to exactly 1080x1080 with padding
       img
     end
